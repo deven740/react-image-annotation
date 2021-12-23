@@ -39,7 +39,7 @@ function TextEditor (props) {
     <React.Fragment>
       <Inner>
         <textarea
-          placeholder='Write description'
+          placeholder='Deven'
           onFocus={props.onFocus}
           onBlur={props.onBlur}
           onChange={props.onChange}
