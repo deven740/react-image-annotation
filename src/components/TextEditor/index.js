@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 const Inner = styled.div`
   padding: 8px 16px;
 
-  select {
+  textarea {
     border: 0;
     font-size: 14px;
     margin: 6px 0;
@@ -38,11 +38,19 @@ function TextEditor (props) {
   return (
     <React.Fragment>
       <Inner>
-        <select value={optionsState}>
-          <option value="A">Apple</option>
-          <option value="B">Banana</option>
-          <option value="C">Cranberry</option>
-        </select>
+          <Select
+            defaultValue='please select'
+            style={{ width: '200px' }}
+            placeholder="select..."
+            onChange={e => props.onChange({
+              ...props.annotation,
+              data: {
+                ...props.annotation.data,
+                text: e,
+              },
+            })}
+          >
+         </Select>
       </Inner>
       {props.value && (
         <Button
