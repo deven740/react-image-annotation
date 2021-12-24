@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 const Inner = styled.div`
   padding: 8px 16px;
 
-  textarea {
+  select {
     border: 0;
     font-size: 14px;
     margin: 6px 0;
@@ -38,14 +38,11 @@ function TextEditor (props) {
   return (
     <React.Fragment>
       <Inner>
-        <textarea
-          placeholder='Deven new Test'
-          onFocus={props.onFocus}
-          onBlur={props.onBlur}
-          onChange={props.onChange}
-          value={props.value}
-        >
-        </textarea>
+        <select value={optionsState}>
+          <option value="A">Apple</option>
+          <option value="B">Banana</option>
+          <option value="C">Cranberry</option>
+        </select>
       </Inner>
       {props.value && (
         <Button
